@@ -4,6 +4,8 @@
 하지만 캠핑에 대한 큰 갈망을 느끼고 있는 사람들은 캠핑장 예약 플랫폼의 부재로 인해 많은 어려움을 겪고 있다.
 이에 따라 우리는 웹을 통해 캠핑장 정보를 한눈에 볼 수 있고 예약 시스템까지 갖춘 캠핑장 예약 플랫폼을 선보이고자 한다.
 
+[![CampingBnB 중간 발표](http://img.youtube.com/vi/watch?v=aOSV0rZBuEw/0.jpg)](https://youtu.be/watch?v=aOSV0rZBuEw) 
+
 ---
 
 - 팀장 : 201910947 컴퓨터과학과 김현빈
