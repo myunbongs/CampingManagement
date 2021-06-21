@@ -4,14 +4,22 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import Main.MainWindow;
 
 @SuppressWarnings("serial")
 public class CampingUploadDialog  extends JDialog{
@@ -28,16 +36,14 @@ public class CampingUploadDialog  extends JDialog{
     }
     
     private void init(){
+
     	campingController = new CampingImpl();
-    	lCampingNumber = new JLabel("캠핑장 번호");
     	lCampingName = new JLabel("캠핑장 이름");
     	lCampingMax = new JLabel("캠핑 최대 인원");
     	lCampingAddress = new JLabel("캠핑장 주소");
     	lCampingPrice = new JLabel("숙박료(일/원)");
     	
-    	
-    	tfCampingNumber = new JTextField(20);
-    	tfCampingName = new JTextField(20);
+      	tfCampingName = new JTextField(20);
     	tfCampingMax = new JTextField(20);
     	tfCampingAddress = new JTextField(20);
     	tfCampingPrice = new JTextField(20);
@@ -47,13 +53,30 @@ public class CampingUploadDialog  extends JDialog{
    	 	btnReg.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				int campingNumber = Integer.parseInt(tfCampingNumber.getText().trim());
+				
+				File file=new File("campingData.txt");
+				Scanner scan = null;
+				int num = 1; 
+				
+				try {
+					scan = new Scanner(file);
+					while (scan.hasNext()) {
+						scan.nextLine();
+						num++;
+					}
+					
+				} catch (FileNotFoundException e1) {
+					e1.printStackTrace();
+				}
+				
 				String campingName = tfCampingName.getText().trim();
 				int campingMax = Integer.parseInt(tfCampingMax.getText().trim());
 				String campingAddress = tfCampingAddress.getText().trim();
 				int campingPrice = Integer.parseInt(tfCampingPrice.getText().trim());
 				
-				CampingVO vo=new CampingVO(campingNumber,campingName,campingMax,campingAddress,campingPrice);
+				String hostId = MainWindow.login.tfUsername.getText();
+
+				CampingVO vo=new CampingVO(num,hostId, campingName,campingMax,campingAddress,campingPrice);
 				try {
 					campingController.uploadCampingInfo(vo);
 				} catch (IOException e1) {
@@ -61,7 +84,6 @@ public class CampingUploadDialog  extends JDialog{
 				}
 				
 				showMessage("캠핑장을 등록했습니다.");
-				tfCampingNumber.setText("");
 				tfCampingName.setText("");
 				tfCampingMax.setText("");
 				tfCampingAddress.setText("");
@@ -73,8 +95,6 @@ public class CampingUploadDialog  extends JDialog{
         });
     	   	 	
     	jPanel=new JPanel(new GridLayout(0,2));
-    	jPanel.add(lCampingNumber);
-    	jPanel.add(tfCampingNumber);
     	
     	jPanel.add(lCampingName);
     	jPanel.add(tfCampingName);

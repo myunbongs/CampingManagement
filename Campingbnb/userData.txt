@@ -1,0 +1,8 @@
+id1,ps1,손님,01012345678,abc@naver.com,0
+
+id2,ps2,캠핑장주인,01087654321,abc@naver.com,1
+
+id3,ps3,테스트손님,01012345678,abc@naver.com,0
+
+id4,ps4,테스트캠핑장주인,01012345678,abc@naver.com,1
+
