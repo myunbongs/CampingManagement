@@ -16,7 +16,6 @@
 [![CampingBnB 중간 발표](http://img.youtube.com/vi/aOSV0rZBuEw/0.jpg)](https://youtu.be/watch?v=aOSV0rZBuEw) 
 
 <br>
-
 ---
 
 - 팀장 : 201910947 컴퓨터과학과 김현빈
