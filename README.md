@@ -6,8 +6,13 @@
 
 <br>
 
+### 기말 발표 영상 (이미지 클릭시 유튜브 링크로 이동합니다!)
+[![CampingBnB 기말 발표](http://img.youtube.com/vi/OqeeAOdj1M8/0.jpg)](https://youtu.be/watch?v=OqeeAOdj1M8) 
 
-### 중간 발표 영상 (이미지 클릭시 유튜브 링크로 이동합니다!)
+<br>
+
+--- 
+#### 중간 발표 영상 (이미지 클릭시 유튜브 링크로 이동합니다!)
 [![CampingBnB 중간 발표](http://img.youtube.com/vi/aOSV0rZBuEw/0.jpg)](https://youtu.be/watch?v=aOSV0rZBuEw) 
 
 <br>
